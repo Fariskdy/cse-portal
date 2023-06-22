@@ -1,0 +1,38 @@
+<section data-bs-version="5.1" class="menu menu2 cid-tCwqK0i8cM" once="menu" id="menu2-18">
+    
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="#">
+                        <img src="/assets/images/logo.png" alt="Hadia-Cse" style="height: 3rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-4" href="#">CSE PORTAL</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                
+                <div class="navbar-buttons mbr-section-btn">
+                    <% if (!user) { %>
+                      <a class="btn btn-sm btn-primary display-7" href="/auth/login">LOGIN</a>
+                    <% } else { %>
+                      <a class="btn btn-primary display-7" href="/dashboard">DASHBOARD</a>
+                      <a class="btn btn-primary display-7" href="/auth/logout">LOGOUT</a>
+                    <% } %>
+                
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+    <%- include('./flash-message')%>
+</section>

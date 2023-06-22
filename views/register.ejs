@@ -1,0 +1,114 @@
+<%- include('./layouts/header') %>
+<section data-bs-version="5.1" class="form5 cid-tCNj82czGR" id="form5-1q">
+    
+    <div class="mbr-overlay"></div>
+    <div class="container">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-5">
+                <strong>Register your Account</strong></h3>
+            
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-8 mx-auto mbr-form">
+          <form action="/auth/register" method="post" class="mbr-form form-with-styler" data-form-title="Register Form">
+  
+  <div class="dragArea row">
+    <div class="col-md col-sm-12 form-group mb-3" data-for="name">
+      <input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control" value="" id="name">
+    </div>
+    <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+      <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control" value="" id="email">
+    </div>
+  </div>
+  <div class="dragArea row">
+    <div class="col-md col-sm-12 form-group mb-3" data-for="phoneNumber">
+      <input type="text" name="phoneNumber" placeholder="Phone Number" data-form-field="phoneNumber" class="form-control" value="" id="phoneNumber">
+    </div>
+    <div class="col-md col-sm-12 form-group mb-3" data-for="address">
+      <input type="text" name="address" placeholder="Address" data-form-field="address" class="form-control" value="" id="address">
+    </div>
+  </div>
+  <div class="dragArea row">
+    <div class="col-md col-sm-12 form-group mb-3" data-for="role">
+      <select name="role" data-form-field="Role" placeholder="Role" class="form-control" id="role">
+        <option value="">Select Role</option>
+        <option value="ADMIN">Admin</option>
+        <option value="REGION_MANAGER">Region Manager</option>
+        <option value="FIELD_COORDINATION_MANAGER">Field Coordination Manager</option>
+        <option value="DIRECTOR_OF_PROJECTS">Director of Projects</option>
+        <option value="ADMINISTRATOR">Administrator</option>
+        <option value="ACCOUNTANT">Accountant</option>
+      </select>
+    </div>
+    <div class="col-md col-sm-12 form-group mb-3" data-for="password">
+      <input type="password" name="password" placeholder="Password" data-form-field="password" class="form-control" value="" id="password-form5-1q">
+	
+      
+    </div>
+	<div class="col-md col-sm-12 form-group mb-3" data-for="password">
+	
+      <input type="password" name="confirmpassword" placeholder="Confirm Password" data-form-field="confirmpassword" class="form-control" value="" id="confirmpassword">
+    </div>
+  </div>
+  <div id="region-manager-fields" style="display:none;">
+    <div class="dragArea row">
+      <div class="col-md col-sm-12 form-group mb-3" data-for="region">
+        <select name="region" data-form-feild="Region" placeholder="Role" class="form-control" id="region">
+          <option value="null">Select Region</option>
+          <option value="CHITTOOR">CHITTOOR</option>
+          <option value="GUNTUR">GUNTUR</option>
+          <option value="KURNOOL">KURNOOL</option>
+          <option value="BARPETA">BARPETA</option>
+          <option value="DHUBRI">DHUBRI</option>
+          <option value="GAYA">GAYA</option>
+          <option value="KISHANGANJ">KISHANGANJ</option>
+          <option value="SITAMARHI">SITAMARHI</option>
+          <option value="SRI_NAGAR">SRI_NAGAR</option>
+          <option value="RANCHI">RANCHI</option>
+          <option value="HAVERI">HAVERI</option>
+          <option value="BHIWANDI">BHIWANDI</option>
+          <option value="UDAIPUR">UDAIPUR</option>
+          <option value="BAHRAICH">BAHRAICH</option>
+          <option value="MORADABAD">MORADBAD</option>
+          <option value="PARGANAS">24 PARGANAS</option>
+          <option value="BIRBHUM">BIRBHUM</option>
+          <option value="MURSHIDABAD">MURSHIDABAD</option>
+        </select>
+        
+
+      </div>
+      <div class="col-md col-sm-12 form-group mb-3" data-for="region-address">
+        <input type="text" name="regionAddress" placeholder="Region Address" data-form-field="regionAddress" class="form-control" value="" id="regionAddress">
+      </div>
+    </div>
+    <div class="dragArea row">
+      <div class="col-md col-sm-12 form-group mb-3" data-for="region-phoneNumber">
+        <input type="text" name="regionPhone" placeholder="Region Phone Number" data-form-field="regionPhone" class="form-control" value="" id="regionPhone">
+      </div>
+      <div class="col-md col-sm-12 form-group mb-3" data-for="region-email">
+        <input type="email" name="regionEmail" placeholder="Region E-mail" data-form-field="region-email" class="form-control" value="" id="regionEmail">
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+    <button type="submit" class="btn btn-primary display-4">Register</button>
+  </div>
+</form>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    const roleSelect = document.querySelector('#role');
+    const regionFieldsSection = document.querySelector('#region-manager-fields');
+  
+    roleSelect.addEventListener('change', function() {
+      if (this.value === 'REGION_MANAGER') {
+        regionFieldsSection.style.display = 'block';
+      } else {
+        regionFieldsSection.style.display = 'none';
+      }
+    });
+  </script>
+           
+    <%- include('./layouts/footer') %>

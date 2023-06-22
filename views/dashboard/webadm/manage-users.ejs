@@ -1,0 +1,235 @@
+<%- include('./layouts/header') %>
+
+
+
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </div>
+    
+    
+        <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Users</h2>
+    
+                </div>
+    
+                <table>
+                    <thead>
+                        <tr>
+                            <td>id</td>
+                            <td>email</td>
+                            <td>role</td>
+                           
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <% users.forEach(user=> { %>
+                        <tr>
+                            <td> <%= user.name %></td>
+                            <td><a style="text-decoration: none;" href="/admin/user/<%= user.id %>">
+                                <%= user.email %>
+                            </a></td>
+                            <td> <form action="/admin/update-role" method="post" class="manage-user-form">
+                                <input type="hidden" name="id" value="<%= user.id %>">
+                                <select name="role" id="role" >
+                                    <option value="ADMIN" <%=user.role==='ADMIN' ? 'selected' : '' %> >Admin</option>
+                                    <option value="MODERATOR" <%=user.role==='MODERATOR' ? 'selected' : '' %>>Moderator
+                                    </option>
+                                    <option value="REGION_MANAGER" <%=user.role==='REGION_MANAGER' ? 'selected' : '' %>>Region Manager</option>
+                                    <option value="FIELD_COORDINATION_MANAGER" <%=user.role==='FIELD_COORDINATION_MANAGER' ? 'selected' : '' %>>FCM</option>
+                                    <option value="DIRECTOR_OF_PROJECTS" <%=user.role==='DIRECTOR_OF_PROJECTS' ? 'selected' : '' %>>DOP</option>
+                                    <option value="ADMINISTRATOR" <%=user.role==='ADMINISTRATOR' ? 'selected' : '' %>>Administrator</option>
+                                    <option value="ACCOUNTANT" <%=user.role==='ACCOUNTANT' ? 'selected' : '' %>>Accountant</option>
+                                </select>
+                                <input type="submit" value="update" class="btn">
+                            </form></td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            
+
+            <!--region managers-->
+
+            <div class="recentCustomers">
+                <div class="cardHeader">
+                    <h2>Region Managers</h2>
+                </div>
+
+                <table>
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Safwan <br> <span>Chittoor, Andhra Pradesh</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Mohammed Shameel <br> <span>Guntur, Andhra Pradesh</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Maqbool <br> <span>Kurnool, Andhra Pradesh</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Suhail <br> <span>Barpeta, Assam</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Umar Rashid <br> <span>Dhubri, Assam</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Junaid Alam <br> <span>Gaya, Bihar</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Nadeem Ashraf <br> <span>Kishanganj, Bihar</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Amanullah <br> <span>Sitamarhi, Bihar</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Rashiq KV <br> <span>Sri Nagar, Jammu & Kashmir</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Shahinsha <br> <span>Ranchi, Jharkhand</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Junaid Ahmad <br> <span>Haveri, Karnataka</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Irshad Ahmed <br> <span>Bhiwandi, Maharashtra</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Shalu Shiyaf <br> <span>Udaipur, Rajasthan</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Twayyib <br> <span>Bahraich, Uttar Pradesh</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Yaseen <br> <span>Moradabad, Uttar Pradesh</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Mansoor <br> <span>24 Parganas, West Bengal</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Abdussamad Hudawi <br> <span>Birbhum, West Bengal</span></h4>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="60px">
+                            
+                        </td>
+                        <td>
+                            <h4>Sirajuddheen <br> <span>Murshidabad, West Bengal</span></h4>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </div>
+    
+        </div>
+    </div>
+
+
+    <%- include('./layouts/footer') %>

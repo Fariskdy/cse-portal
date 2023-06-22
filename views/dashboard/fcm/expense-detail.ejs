@@ -1,0 +1,126 @@
+<%- include('./layouts/header') %>
+<div class="main">
+  <div class="topbar">
+    <div class="toggle">
+      <ion-icon name="menu-outline"></ion-icon>
+    </div>
+    <div class="button-group">
+      <button> <a href="/fcm/expenses">Expenses Home</a></button>
+      
+    </div>
+    <div class="user">
+      <img src="/assets/images/user.png" alt="User Image">
+      <div class="dropdown">
+        <div class="dropdown-header">
+          <h3><%= user.name %></h3>
+          <p>FCM</p>
+        </div>
+        <div class="dropdown-links">
+          <a href="/user/profile"><i class="fa fa-home"></i>Profile</a>
+          <a href="/fcm/settings"><i class="fa fa-cogs"></i>Settings</a>
+        </div>
+        <div class="dropdown-footer">
+          <a href="/auth/logout">Logout</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <%- include('./layouts/flash-message')%>
+  <div class="expense">
+    <div class="summary">
+      <div class="summary-heading">Summary</div>
+      <div class="summary-amount">₹<%= totalAmount %></div>
+      <div class="summary-month"><%= new Date().toLocaleString('default', { month: 'long', year: 'numeric' }) %></div>
+
+    </div>
+    
+    <div class="recentExpense">
+      <div class="cardHeader">
+        <h2><%= region %> Expenses - <%= new Date().toLocaleString('default', { month: 'long', year: 'numeric' }) %></h2>
+
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            
+            <td>Date</td>
+            <td>Description</td>
+            <td>Type</td>
+            <td>Voucher No.</td>
+            <td>Amount</td>
+            <td>Bill</td>
+            <td>Verification status</td>
+            <td>Actions</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let expense of expenses) { %>
+            <tr>
+              
+              <td><%= expense.date.toISOString().substring(0,10) %></td>
+              <td><%= expense.description %></td>
+              <td><%= expense.type %></td>
+              <td><%= expense.voucherNo %></td>
+              <td style="font-weight: 900; font-size:larger;"><%= expense.amount %></td>
+              <td>
+                <% if (expense.BillImage) { %>
+                  <a href="/uploads/bills/<%= expense.BillImage %>" target="_blank">
+                    <ion-icon name="eye" alt="View"></ion-icon>
+                  </a>
+                <% } else { %>
+                  No Image
+                <% } %>
+              </td>
+            
+             <td>
+                  <% if (expense.verifiedByFcm) { %>
+                    <span class="status verified">Verified</span>
+                  <% } else { %>
+                    <span class="status pending">pending</span>
+                  <% } %>
+            </td>
+            <td>
+              <% if (!expense.verifiedByFcm) { %>
+                <div class="crudbtn-group">
+                  <form action="/fcm/expenses/<%= expense._id %>/verify" method="POST">
+                    <button type="submit" class="dlt" style="color: aliceblue;">Verify</button>
+                  </form>
+                </div>
+              <% } %>
+            </td>            
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      
+      
+    </div>
+    
+    
+    
+
+  </div>
+ 
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('./layouts/footer') %>

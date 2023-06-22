@@ -1,0 +1,116 @@
+<%- include('./layouts/header') %>
+<div class="main">
+  <div class="topbar">
+    <div class="toggle">
+      <ion-icon name="menu-outline"></ion-icon>
+    </div>
+    <div class="button-group">
+      <!--<button> <a href="/fcm/expenses">Expenses Home</a></button> -->
+      
+    </div>
+    <div class="user">
+      <img src="/assets/images/user.png" alt="User Image">
+      <div class="dropdown">
+        <div class="dropdown-header">
+          <h3><%= user.name %></h3>
+          <p>FCM</p>
+        </div>
+        <div class="dropdown-links">
+          <a href="/user/profile"><i class="fa fa-home"></i>Profile</a>
+          <a href="/fcm/settings"><i class="fa fa-cogs"></i>Settings</a>
+        </div>
+        <div class="dropdown-footer">
+          <a href="/auth/logout">Logout</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <%- include('./layouts/flash-message')%>
+  <div class="region-data">
+    <div class="main-card">
+        <div class="main-card-header">
+            <h1 class="heading">HADIA - National Interventions</h1>
+            <p class="para">Region Data</p>
+        </div>
+        <div class="main-card-item" data-heading="Region Info">
+            <div class="card-body">
+                <!-- Info Card content here -->
+                <p>Region: <span> <%= regionData.region %></span></p>
+                <% users.forEach(user => { %>
+                <p>Manager: <span><%= user.name %></span></p>
+                <p>Email: <span><%= user.email %></span></p>
+                <% }); %>
+            </div>
+        </div>
+        <div class="main-card-item" data-heading="Region Data">
+            <div class="cardata-body">
+
+                <form action="/rm/region-data" method="POST">
+                    <label for="region" class="mr-left">Region</label>
+                    <input type="text" id="region" name="region" placeholder="Enter Region" value="<%= regionData.region %>" readonly>
+
+                    <label for="hms" class="mr-left">HMS</label>
+                    <input type="number" id="hms" name="hms" placeholder="Enter HMS" value="<%= regionData.hms %>" readonly required>
+                    
+                    <label for="field_coordinators" class="mr-left">Field Coordinators</label>
+                    <input type="number" id="field_coordinators" name="field_coordinators" placeholder="Enter Field Coordinators" value="<%= regionData.field_coordinators %>"readonly required>
+
+                    <label for="hms_students" class="mr-left">HMS Students</label>
+                    <input type="number" id="hms_students" name="hms_students" placeholder="Enter HMS Students" value="<%= regionData.hms_students %>" readonly required>
+                  
+                    <label for="teachers" class="mr-left">Teachers</label>
+                    <input type="number" id="teachers" name="teachers" placeholder="Enter Teachers" value="<%= regionData.teachers %>" readonly required>
+                  
+                    <label for="new_hms" class="mr-left">New HMS</label>
+                    <input type="number" id="new_hms" name="new_hms" placeholder="Enter New HMS" value="<%= regionData.new_hms %>"readonly required>
+                  
+                    <label for="third_std_students" class="mr-left">3rd Std Students</label>
+                    <input type="number" id="third_std_students" name="third_std_students" placeholder="Enter 3rd Std Students" value="<%= regionData.third_std_students %>" readonly required>
+                  
+                    <label for="qlm_centres" class="mr-left">QLM Centres</label>
+                    <input type="number" id="qlm_centres" name="qlm_centres" placeholder="Enter QLM Centres" value="<%= regionData.qlm_centres %>" readonly required>
+                  
+                    <label for="talim_e_baligan_centres" class="mr-left">Ta'lim-e-Baligan Centres</label>
+                    <input type="number" id="talim_e_baligan_centres" name="talim_e_baligan_centres" placeholder="Enter Ta'lim-e-Baligan Centres" value="<%= regionData.talim_e_baligan_centres %>" readonly required>
+                  
+                    <label for="model_hms" class="mr-left">Model HMS</label>
+                    <input type="number" id="model_hms" name="model_hms" placeholder="Enter Model HMS" value="<%= regionData.model_hms %>" readonly required>
+                  
+                    <label for="back_to_school_centres" class="mr-left">Back to School Centres</label>
+                    <input type="number" id="back_to_school_centres" name="back_to_school_centres" placeholder="Enter Back to School Centres" value="<%= regionData.back_to_school_centres %>" readonly required>
+                  
+                    <label for="pre_schools" class="mr-left">Pre Schools</label>
+                    <input type="number" id="pre_schools" name="pre_schools" placeholder="Enter Pre Schools" value="<%= regionData.pre_schools %>" readonly required>
+                  
+                    
+  
+                    
+                    </form>
+                    
+                   
+            </div>
+        </div>
+          
+    </div>
+
+    <div class="sub-card">
+     
+      
+        <div class="sub-card-item">
+            <!-- Sub card item 1 content here -->
+            <img src="/assets/images/validation.png" alt="">
+            <h1 class="heading"> Summary </h1>
+            <a href="/fcm/region-data/<%= regionData.region %>/summary"> VIEW</a>
+        </div>
+        <div class="sub-card-item">
+            <!-- Sub card item 2 content here -->
+            <img src="/assets/images/report.png" alt="">
+            <h1 class="heading">Monthly Summary</h1>
+            <a href=""> VIEW</a>
+        </div>
+    </div>
+</div>
+
+
+  <%- include('./layouts/footer')%>

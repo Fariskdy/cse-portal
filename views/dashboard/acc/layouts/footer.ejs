@@ -1,0 +1,53 @@
+</div>
+<!-- ====== End of Main Wrapper ====== -->
+<script>
+    // add hovered class to active url list item
+    var url = window.location.pathname;
+    let list = document.querySelectorAll(".navigation li");
+
+    // Remove "hovered" class from all list items
+    list.forEach((item) => {
+        item.classList.remove("hovered");
+    });
+
+    // Add "hovered" class to the current list item
+    if (url.includes('/dashboard')) {
+        document.getElementById('dashboard').classList.add('hovered');
+    } else if (url.includes('/settings')) {
+        document.getElementById('settings').classList.add('hovered');
+    } else if (url.includes('/expenses-data')) {
+        document.getElementById('expenses-data').classList.add('hovered');
+    } else if (url.includes('/region-data')) {
+        document.getElementById('reg-data').classList.add('hovered');
+    }
+
+
+
+    // Get all the message elements
+    const messageElements = document.querySelectorAll('.message');
+
+    // Function to hide a message element
+    const hideMessage = (messageElement) => {
+        messageElement.style.display = 'none';
+    };
+
+    // Display the messages
+    messageElements.forEach((messageElement) => {
+        messageElement.style.display = 'block';
+
+        // Hide the message after 15 seconds
+        setTimeout(() => {
+            hideMessage(messageElement);
+        }, 7000);
+    });
+
+</script>
+<script src="/custom/adm/styles.js"></script>
+<!-- ====== ionicons ======= -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+
+</html>

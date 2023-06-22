@@ -1,0 +1,87 @@
+<%- include('./layouts/header') %>
+
+
+
+<div class="main">
+
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            <div class="button-group">
+              <!--<button> <a href="/fcm/expenses-data">All Expenses</a></button>-->
+              <button> <a href="/fcm/expenses">Current Month</a></button>
+              
+            </div>
+            <div class="user">
+              <img src="/assets/images/user.png" alt="User Image">
+              <div class="dropdown">
+                <div class="dropdown-header">
+                  <h3><%= user.name %></h3>
+                  <p>FCM</p>
+                </div>
+                <div class="dropdown-links">
+                  <a href="/user/profile"><i class="fa fa-home"></i>Profile</a>
+                  <a href="/fcm/settings"><i class="fa fa-cogs"></i>Settings</a>
+                </div>
+                <div class="dropdown-footer">
+                  <a href="/auth/logout">Logout</a>
+                </div>
+              </div>
+            </div>
+            <!-- <a class="modal-btn" href="/dop/expenses" style="text-decoration: none;">All Expenses</a> -->
+            
+        </div>
+        
+        <div class="container">
+            <h1 class="section-header">Verify Expenses - <%= getPreviousMonth() %></h1>
+            
+            <div class="cardcontent">
+              <% if (expensesByRegion.length === 0) { %>
+                <div class="no-expenses-message">
+                  No regions with expenses found in <%= getPreviousMonth() %>.
+                </div>
+              <% } else { %>
+                <% expensesByRegion.forEach(region => { %>
+                  <% if (region.expenses.length > 0) { %>
+                    <div class="card">
+                      <% if (region.unverifiedCount === 0) { %>
+                        <div class="card-verified-count"><img src="/assets/images/approved.png" alt="" srcset=""></div>
+                      <% } else { %>
+                        <div class="card-unverified-count">
+                          <% const unverifiedExpensesCount = region.expenses.filter(expense => !expense.verifiedByFcm).length %>
+                          <%= unverifiedExpensesCount %>
+                        </div>
+                      <% } %>
+                      <div class="card-caption"><%= getPreviousMonth() %></div>
+                      <div class="card-heading"><%= region._id %></div>
+                      <div class="card-footer">
+                        <div class="card-footer-content">
+                          <a href="/fcm/pre-expenses/<%= region._id %>">View Expenses</a>
+                        </div>
+                      </div>
+                    </div>
+                  <% } %>
+                <% }) %>
+              <% } %>
+            </div>
+          </div>
+          
+          <% function getPreviousMonth() {
+            const currentDate = new Date();
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            return currentDate.toLocaleString('default', { month: 'long', year: 'numeric' });
+          } %>
+          
+          
+      
+          
+        
+   
+
+
+    </div>
+
+
+
+    <%- include('./layouts/footer') %>

@@ -1,0 +1,48 @@
+{
+  "name": "cse-portal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.8",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.2",
+    "chart.js": "^4.3.0",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "crypto": "^1.0.1",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.8",
+    "exceljs": "^4.3.0",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "fs": "^0.0.1-security",
+    "http-errors": "^2.0.0",
+    "jimp": "^0.22.8",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.4",
+    "mongoose": "^6.11.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.3",
+    "passport": "^0.6.0",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-local": "^1.0.0",
+    "pdfkit": "^0.13.0",
+    "tailwindcss": "^3.3.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

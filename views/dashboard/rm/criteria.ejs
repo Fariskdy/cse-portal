@@ -1,0 +1,357 @@
+<%- include('./layouts/header') %>
+<div class="main">
+    <div class="topbar">
+        <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+        </div>
+
+        <div class="user">
+          <img src="/assets/images/user.png" alt="User Image">
+          <div class="dropdown">
+            <div class="dropdown-header">
+              <h3><%= user.name %></h3>
+              <p><%= user.region %></p>
+            </div>
+            <div class="dropdown-links">
+              <a href="/user/profile"><i class="fa fa-home"></i>Profile</a>
+              <a href="/rm/settings"><i class="fa fa-cogs"></i>Settings</a>
+            </div>
+            <div class="dropdown-footer">
+              <a href="/auth/logout">Logout</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <%- include('./layouts/flash-message')%>
+
+    <div class="info-content">
+      <h1 class="info-heading">Fund Allotment Criteria</h1>
+      <p class="description">Fund Allotment Criteria for each Account Head</p>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/income.png');">
+          <p class="headline">Income</p>
+        </div>
+        <div class="back">
+          <div>
+            <h3>Description</h3>
+            <p>The money received by you from CSE
+            </p>
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/infrastructure.png');">
+          <p class="headline">System Development Fund</p>
+        </div>
+        <div class="back">
+          <div>
+            <h3>Description</h3>
+            <p>System Development Fund
+            </p><br>
+            <h3>Items Included</h3>
+            <li> Visits by Regional personnels.
+            </li>
+            <li>Training arranged at regional
+              levels
+              </li>
+            <li>TA for RCs, ACs, PMs & APMs
+            </li>
+            <li>Stationeries 
+            </li>
+            <li>Field Survey by FC 
+            </li><br>
+            <h3>Amount</h3>
+            <p>Rs 1300/ HMS
+            </p>
+            <p>Rs 100,000/FC
+            </p>
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/exam.png');">
+          <p class="headline">Examinations</p>
+        </div>
+        <div class="back">
+          <div>
+            <h3>Description</h3>
+            <p>All expenses directly related to conducting half yearly and annual examination or any such examinations decided by the concerned.
+            </p>
+            <br>
+            <h3>Items Included</h3>
+            <li>Exam related expenses
+            </li><br>
+            <h3>Amount</h3>
+            <p>Rs 58/Student
+            </p>
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/board-meeting.png');">
+          <p class="headline">Range</p>
+        </div>
+        <div class="back">
+          <div>
+            <h3>Description</h3>
+            <p>Allowance for Teachers
+              participated in monthly range
+              meetings
+              </p><br>
+            <h3>Items Included</h3>
+            <li>Total 10 range meetings per
+              year
+              </li><br>
+            <h3>Amount</h3>
+            <p>Rs 100/Head/Meet
+            </p>
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/office-building.png');">
+          <p class="headline">Office and Assets</p>
+        </div>
+        <div class="back">
+          <div>
+            <h3>Description</h3>
+            <p>Routine expense of office &
+              accommodation including rent
+              Any assets purchased
+              </p>
+              <br>
+            <h3>Items Included</h3>
+            <li>For purchasing any sort of 
+              assets, prior approval from 
+              Administrator is mandatory.
+              </li><br>
+
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/festival.png');">
+          <p class="headline">Art Fest</p>
+        </div>
+        <div class="back">
+          <div>
+         
+            <h3>Description</h3>
+            <p>All expenses directly related to 
+              conducting  Art Fest
+              </p><br>
+            <h3>Items Included</h3>
+            <li>For regional level Art Fest
+              Encouraging HMS participated
+              </li><br>
+            <h3>Amount</h3>
+            <p>Rs 60,000/Region</p>
+              <p>Rs 250/ HMS</p>
+              
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/education.png');">
+          <p class="headline">Training</p>
+        </div>
+        <div class="back">
+          <div>
+            <h3>Description</h3>
+            <p>Expenses directly related to 
+              the training programs  
+              by L&D Department
+              </p>
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/scholarship.png');">
+          <p class="headline">Scholarships</p>
+        </div>
+        <div class="back">
+          <div>
+            
+            <h3>Description</h3>
+            <p>Towards the monitary  
+              allotment to the 3rd std  
+              students passed Scholarship
+              exam. 
+              </p><br>
+            <h3>Items Included</h3>
+            <li>Only 30% students provided 
+              that they have scored min.
+              </li>
+              <br>
+            <h3>Amount</h3>
+            <p>Rs 500/ Student
+            </p>
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/test.png');">
+          <p class="headline">Teachers' Learning Test (TLT)</p>
+        </div>
+        <div class="back">
+          <div>
+         <h3>Description</h3>
+         <p>Teachers' Learning Test
+          (Muallim tests)
+          Monitary awards offered to
+          the teachers passed TLT
+          </p><br>
+        <h3>Amount</h3>
+        <p>Rs 2500/Teacher
+        </p>
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/visitor.png');">
+          <p class="headline">Inter-Regional Visits</p>
+        </div>
+        <div class="back">
+          <div>
+            <h3>Description</h3>
+            <p>Inter Regional Visits.
+            </p>
+            <br>
+            <h3>Items Included</h3>
+            <li>All expenses directly related to
+              visits of regional personnel to
+              other regions in order to 
+              acquire more experience
+              </li><br>
+           
+            
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/initiative.png');">
+          <p class="headline">Initiation</p>
+        </div>
+        <div class="back">
+          <div>
+            
+            <h3>Description</h3>
+            <p>Expenses directly related to 
+              initiating new HMS in new 
+              areas
+              </p><br>
+            <h3>Items Included</h3>
+            <li>Public Awareness Classes</li>
+              <li>System inductions</li><br>
+            <h3>Amount</h3>
+            <p>Rs 1000/New
+              HMS
+              </p>
+              
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/trophy.png');">
+          <p class="headline">Awards</p>
+        </div>
+        <div class="back">
+          <div>
+            
+            <h3>Description</h3>
+            <p>Towards the cash awards
+              given to teachers/ HMS based 
+              on their performance
+              </p><br>
+              <h3>Amount</h3>
+              <p>Rs 3000/HMS
+              </p>
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/dome.png');">
+          <p class="headline">Mahallu</p>
+        </div>
+        <div class="back">
+          <div>
+         
+            <h3>Description</h3>
+            <p>Expenses directly related to 
+              village empowerment 
+              programs
+              </p>
+              <br>
+            <h3>Items Included</h3>
+            <li>Qur'an Learning Mission
+            </li>
+            <li>Ta'lim-e-Balighan Centres
+            </li>
+            <li>Library
+            </li>
+            <li>Back to School
+            </li>
+            <li>Pre School
+            </li>
+            <li>Feesibility Study 
+            </li>
+            <li>Misc Mahallu Programs
+            </li><br>
+            <h3>Amount</h3>
+            <p>15000 per QLM and Baligan Centres</p>
+            <p>10000 per Model Hms and Pre Schools</p>
+            <p>25000 per Back to School</p>
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/uzbekistan.png');">
+          <p class="headline">Madrassa</p>
+        </div>
+        <div class="back">
+          <div>
+          
+            <h3>Description</h3>
+            <p>Any expense directly pertaining
+              to Madrasa Empowerment 
+              programs
+              </p>
+          </div>
+        </div>
+      </a>
+      <a href="#!" class="info-card">
+        <div class="front" style="background-image: url('/assets/images/price-tag.png');">
+          <p class="headline">Others</p>
+        </div>
+        <div class="back">
+          <div>
+            
+            <h3>
+              Description
+            </h3>
+            <p>Any expense that cannot be 
+              allotted to any of the above 
+              head.
+              </p>
+            <br>
+            <h3>
+              Items Included
+            </h3>
+            <li>In this case, the user shall be
+              contacted by HQ, and help 
+              him to define the expense
+              and locate to the right head.
+              Or new head will be introduced
+              </li>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+
+
+
+
+
+    <%- include('./layouts/footer') %>

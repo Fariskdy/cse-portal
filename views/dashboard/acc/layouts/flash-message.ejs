@@ -1,0 +1,14 @@
+
+<% if (locals.messages) { %>
+    <div class="messages">
+      <ul class="message-list">
+        <% Object.keys(messages).forEach((key) => { %>
+          <% messages[key].forEach((message) => { %>
+            <li class="message <%= key %>">
+              <%= message %>
+            </li>
+          <% }) %>
+        <% }) %>
+      </ul>
+    </div>
+  <% } %>
